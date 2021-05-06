@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadicalChat</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <marquee id="error">An amazing site by <a href="https://familyfriendly.xyz">Family Friendly</a></marquee>
+
+    <div class="aids" id="hello">
+        <h1>Welcome to radicalchat</h1>
+        <p>Way better then revolt</p>
+    </div>
+    <div class="aids" id="main">
+        <h2 id="chatTitle">Start chatting and make friends</h2>
+        <div id="login">
+            username: <input id="username" type="text">
+            <button onclick="joinRoom()" type="button" value="start messaging">start messaging</button>
+        </div>
+
+        <hr>
+        <ul id="chat">
+
+        </ul>
+        <div id="talk">
+            say: <input id="msg" type="text">
+            <button onclick="sendMsg()" type="button" value="send message">send message</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>

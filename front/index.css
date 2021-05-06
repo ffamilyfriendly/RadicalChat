@@ -1,0 +1,87 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: white;
+    background-color: black;
+}
+
+#hello {
+    color: red;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    border: 3px solid red;
+    margin-top: 10rem;
+    background-image: url("https://thumbs.gfycat.com/AbandonedAnguishedCatfish-size_restricted.gif");
+    background-size: contain;
+    background-repeat: space;
+    padding: 2em;
+}
+
+#hello h1 {
+    background: #FF0000;
+    background: -webkit-linear-gradient(to left, #FF0000 0%, #ffff00 50%, #FF0000 100%);
+    background: -moz-linear-gradient(to left, #FF0000 0%, #ffff00 50%, #FF0000 100%);
+    background: linear-gradient(to left, #FF0000 0%, #ffff00 50%, #FF0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+#hello p {
+    font-size: x-large;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: white;
+}
+
+marquee b {
+    color: red;
+}
+
+#chat {
+    list-style: none;
+    padding: 0;
+}
+
+#chat li {
+    border-bottom: 2px dotted orange;
+    padding: 0.25rem;
+}
+
+#talk {
+    display: none;
+    border: 2px solid red;
+    padding: 1rem;
+}
+
+hr {
+    color: red;
+}
+
+.message p {
+    margin: 0;
+}
+
+.message b::after {
+    content: ":";
+}
+
+#error {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.452);
+}
+
+.cmd {
+    background-color: green;
+    color: black;
+}
+
+#main {
+    padding-top: 1rem;
+    width: 50%;
+    margin: auto;
+}
