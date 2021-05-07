@@ -1,6 +1,6 @@
 // page might be 90s but fuck writing not es6
 
-const socket = io("http://localhost:3000")
+const socket = io("https://familyfriendly.xyz")
 
 const uhOh = ( type = "type", reason = "reason" ) => {
     document.getElementById("error").innerHTML = type.bold() + ": " + reason

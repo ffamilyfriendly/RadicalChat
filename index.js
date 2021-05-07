@@ -69,11 +69,13 @@ const clearMessages = (id) => {
 
 io.on("connection", client => {
 
+    const ip = client.handshake.headers['x-forwarded-for'] || client.handshake.address.address;
+
     client.on("hello", async (uObj) => {
         if(!uObj || !uObj.username) return client.emit("err",{ you:"dumb", reason:"missing required field" })
         else if(uObj.username.length > 20) return client.emit("err", { you:"dumb", reason:"config issue" })
-        console.log(`someone trying to log in as ${uObj.username} with ip ${client.handshake.address}`)
-        const ans = await genUser(uObj.username, debug ? uObj.username : client.handshake.address)
+        console.log(`someone trying to log in as ${uObj.username} with ip ${ip}`)
+        const ans = await genUser(uObj.username, debug ? uObj.username : ip)
 
         if(ans.type == "no") {
             return client.emit("err", { you:"dumb", reason:ans.reason })
