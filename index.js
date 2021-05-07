@@ -69,7 +69,7 @@ const clearMessages = (id) => {
 
 io.on("connection", client => {
 
-    const ip = client.handshake.headers['x-forwarded-for'] || client.handshake.address.address;
+    const ip = client.handshake.headers['x-Real-IP'] || client.handshake.address.address;
 
     client.on("hello", async (uObj) => {
         if(!uObj || !uObj.username) return client.emit("err",{ you:"dumb", reason:"missing required field" })
