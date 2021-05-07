@@ -3,7 +3,8 @@
 const socket = io("https://familyfriendly.xyz")
 
 const uhOh = ( type = "type", reason = "reason" ) => {
-    document.getElementById("error").innerHTML = type.bold() + ": " + reason
+    document.getElementById("error").innerHTML = type.bold() + ": "
+    document.getElementById("error").innerText += reason
 }
 
 const sendMsg = () => {
