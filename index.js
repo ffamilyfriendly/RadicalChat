@@ -1,5 +1,5 @@
 // CONFIG
-const debug = true
+const debug = false
 const admin = "familyfriendly"
 
 const Database = require("better-sqlite3")
@@ -96,10 +96,15 @@ io.on("connection", client => {
         
         const status = await doMsg(msg.content, connections.get(client.id).user.id)
         if(status.type == "ok") {
+            if(connections.get(client.id).timeout) return client.emit("cmd", { cmd:"whois", html:`<b style="color:red;">RATELIMIT</b> calm down there, cowpoke` })
             let u = connections.get(client.id).user
             delete u.ip
             status.data.author = u
             io.emit("chat", { type:"message", digest:`${u.username}: ${status.data.content}` , data: status.data, members: connections.size } )
+            connections.get(client.id).timeout = true
+            setTimeout(() => {
+                connections.get(client.id).timeout = false
+            }, 1000)
         }
     })
 

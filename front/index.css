@@ -17,7 +17,6 @@ body {
     margin-top: 10rem;
     background-image: url("https://thumbs.gfycat.com/AbandonedAnguishedCatfish-size_restricted.gif");
     background-size: contain;
-    background-repeat: space;
     padding: 2em;
 }
 
@@ -85,3 +84,38 @@ hr {
     width: 50%;
     margin: auto;
 }
+
+#info {
+    position: absolute;
+    margin: 0.5rem;
+    bottom: 0;
+    left: 0;
+    border: 1px dotted white;
+    padding: 1rem;
+    transition: .5s;
+    transform: translateX(-95%);
+    z-index: 100;
+    background-color: black;
+}
+
+#info:hover {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#info::after {
+    content: "terms";
+    position: absolute;
+    z-index: 1;
+    right: -2rem;
+    background-color: black;
+    border: 1px dotted white;
+    top: 35%;
+    font-size: 1.5rem;
+    transform: rotateZ(90deg);
+}
+
+#terms {
+    margin: 0;
+}
+
